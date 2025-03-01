@@ -1,0 +1,21 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    Facebook
+  </body>
+  <div id="post"></div>
+  <script>
+    // fetch goes to the given server and gets data
+    // then we need to convert that data to json
+    async function fetchpost() {
+      const res = await fetch("https://jsonplaceholder.typicode.com/posts/1");
+      const json = await res.json();
+      document.getElementById("post").innerText = json.title;
+    }
+    fetchpost();
+  </script>
+</html>

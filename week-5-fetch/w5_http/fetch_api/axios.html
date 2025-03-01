@@ -1,0 +1,24 @@
+<html lang="en"></html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <head>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.7.6/axios.min.js">
+            // we need to import axios like this to work with it
+        </script>
+    </head>
+  </head>
+  <body>
+    Facebookkk
+  </body>
+  <div id="post"></div>
+  <script>
+    async function fetchpost(){
+        const res = await axios.get("https://jsonplaceholder.typicode.com/posts/1")
+        // with axios the response will be autometically coverted into json format
+        document.getElementById('post').innerText = res.data.title
+    }
+    fetchpost()
+  </script>
+</html>
