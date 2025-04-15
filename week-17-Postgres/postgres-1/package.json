@@ -1,0 +1,21 @@
+{
+  "name": "postgres-1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "tsc -b && node dist/index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "@types/express": "^5.0.1",
+    "@types/pg": "^8.11.12",
+    "express": "^5.1.0",
+    "pg": "^8.14.1",
+    "typescript": "^5.8.3"
+  }
+}
