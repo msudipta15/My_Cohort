@@ -1,4 +1,12 @@
+"use client";
+
+import axios from "axios";
+import { useState } from "react";
+
 export default function Signin() {
+  const [username, setusername] = useState("");
+  const [password, setpassword] = useState("");
+
   return (
     <div className="w-screen h-screen flex justify-center items-center ">
       <div
@@ -10,6 +18,9 @@ export default function Signin() {
 
           <input
             type="text"
+            onChange={(e) => {
+              setusername(e.target.value);
+            }}
             className="bg-white text-black  m-2 mb-5 ml-3 p-1 rounded-md w-64 "
           />
         </div>
@@ -19,6 +30,9 @@ export default function Signin() {
 
           <input
             type="text"
+            onChange={(e) => {
+              setpassword(e.target.value);
+            }}
             className="bg-white text-black m-2 mb-5 ml-3.5 p-1 rounded-md w-64 "
           />
         </div>
@@ -27,6 +41,12 @@ export default function Signin() {
           <button
             className="bg-blue-600 px-4 py-1 rounded-md m-2 cursor-pointer
             "
+            onClick={() => {
+              axios.post("http://localhost:3000/api/signin", {
+                username,
+                password,
+              });
+            }}
           >
             Sign in
           </button>
